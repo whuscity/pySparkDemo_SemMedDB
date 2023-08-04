@@ -36,7 +36,7 @@ class SemMedDB():
 
   # return stream dataframe
   def getDataframe(self, streamName):
-    return spark.read.format('csv').options(header='true', delimiter=',').schema(self.getSchema(streamName)).load(self.getFullpath(streamName))
+    return spark.read.format('csv').options(header='false', delimiter=',').schema(self.getSchema(streamName)).load(self.getFullpath(streamName))
 
   # define stream dictionary
   streams = {
